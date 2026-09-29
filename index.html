@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        PETROFLOW | Baghewala Digital-Well
+    </title>
+
+
+    <!-- =========================================
+         GOOGLE FONTS
+    ========================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         CSS
+    ========================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         APPLICATION
+    ========================================== -->
+
+    <div class="app">
+
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside
+            class="sidebar"
+            id="sidebar"
+        >
+
+
+            <!-- =================================
+                 HAMBURGER BUTTON
+            ================================== -->
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="true"
+            >
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </button>
+
+
+
+            <!-- =================================
+                 BRAND
+            ================================== -->
+
+            <div class="brand">
+
+                <div class="brand-symbol">
+                    ◈
+                </div>
+
+                <div class="brand-content">
+
+                    <h2>
+                        PETRO<span>FLOW</span>
+                    </h2>
+
+                    <p>
+                        DIGITAL-WELL
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 NAVIGATION
+            ================================== -->
+
+            <nav class="navigation">
+
+
+                <button
+                    class="nav-item active"
+                    data-page="dashboard"
+                >
+
+                    <span class="nav-icon">
+                        🏠
+                    </span>
+
+                    <span class="nav-text">
+                        Dashboard
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="nav-item"
+                    data-page="wells"
+                >
+
+                    <span class="nav-icon">
+                        ◉
+                    </span>
+
+                    <span class="nav-text">
+                        Live Wells
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="nav-item"
+                    data-page="digital-twin"
+                >
+
+                    <span class="nav-icon">
+                        ◌
+                    </span>
+
+                    <span class="nav-text">
+                        Digital Twin
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="nav-item"
+                    data-page="optimization"
+                >
+
+                    <span class="nav-icon">
+                        ⚙
+                    </span>
+
+                    <span class="nav-text">
+                        Optimization
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="nav-item"
+                    data-page="alerts"
+                >
+
+                    <span class="nav-icon">
+                        ⚠
+                    </span>
+
+                    <span class="nav-text">
+                        Alerts
+                    </span>
+
+                    <span
+                        class="alert-count"
+                        id="alertCount"
+                    >
+                        3
+                    </span>
+
+                </button>
+
+
+
+                <button
+                    class="nav-item"
+                    data-page="reports"
+                >
+
+                    <span class="nav-icon">
+                        ▤
+                    </span>
+
+                    <span class="nav-text">
+                        Reports
+                    </span>
+
+                </button>
+
+
+            </nav>
+
+
+
+            <!-- =================================
+                 FIELD STATUS
+            ================================== -->
+
+            <div class="field-status">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong>
+                        FIELD LINK
+                    </strong>
+
+                    <small>
+                        Simulation Online
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 SIDEBAR FOOTER
+            ================================== -->
+
+            <div class="sidebar-footer">
+
+                Baghewala Heavy-Oil Field
+
+                <br>
+
+                Rajasthan • SIH26120
+
+            </div>
+
+
+        </aside>
+
+
+
+        <!-- =====================================
+             MAIN CONTENT
+        ====================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================
+                 TOP BAR
+            ================================== -->
+
+            <header class="topbar">
+
+
+                <div class="page-heading">
+
+                    <span class="system-label">
+                        SYSTEM STATUS / BAGHEWALA FIELD
+                    </span>
+
+                    <h1 id="pageTitle">
+                        Field Overview
+                    </h1>
+
+                </div>
+
+
+
+                <div class="topbar-actions">
+
+
+                    <div
+                        class="clock"
+                        id="systemTime"
+                    >
+                        00:00:00 UTC
+                    </div>
+
+
+                    <button
+                        class="refresh-button"
+                        id="refreshButton"
+                        title="Refresh"
+                    >
+                        ↻
+                    </button>
+
+
+                    <button
+                        class="ai-button"
+                        id="aiButton"
+                    >
+                        ✦ Ask PETRO-AI
+                    </button>
+
+
+                </div>
+
+
+            </header>
+
+
+
+            <!-- =================================
+                 DASHBOARD
+            ================================== -->
+
+            <section
+                class="page active"
+                id="dashboard"
+            >
+
+
+                <!-- =================================
+                     METRIC CARDS
+                ================================== -->
+
+                <div class="metrics-grid">
+
+
+                    <!-- Production -->
+
+                    <article class="metric-card cyan">
+
+                        <span class="metric-label">
+                            CURRENT PRODUCTION
+                        </span>
+
+                        <h2 id="productionValue">
+                            1,850
+                            <small>bpd</small>
+                        </h2>
+
+                        <p class="positive">
+                            ▲ 4.2%
+                            <span>
+                                vs 24h trend
+                            </span>
+                        </p>
+
+                    </article>
+
+
+
+                    <!-- Health -->
+
+                    <article class="metric-card orange">
+
+                        <span class="metric-label">
+                            AVERAGE WELL HEALTH
+                        </span>
+
+                        <h2>
+                            <span id="healthValue">
+                                0.86
+                            </span>
+                        </h2>
+
+                        <p>
+                            Across 9 monitored wells
+                        </p>
+
+                        <div class="circle-progress">
+
+                            <span>
+                                86%
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Pump Efficiency -->
+
+                    <article class="metric-card teal">
+
+                        <span class="metric-label">
+                            PUMP EFFICIENCY
+                        </span>
+
+                        <h2>
+                            82
+                            <small>%</small>
+                        </h2>
+
+                        <p>
+                            SRP operating envelope
+                        </p>
+
+                        <div class="progress">
+
+                            <span
+                                style="width: 82%;"
+                            ></span>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Rod Float -->
+
+                    <article class="metric-card red">
+
+                        <span class="metric-label">
+                            ROD-FLOAT RISK
+                        </span>
+
+                        <h2>
+                            <span id="riskValue">
+                                18
+                            </span>
+                            <small>%</small>
+                        </h2>
+
+                        <p class="warning">
+                            3 wells require attention
+                        </p>
+
+                        <div class="progress danger">
+
+                            <span
+                                style="width: 18%;"
+                            ></span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     DASHBOARD GRID
+                ================================== -->
+
+                <div class="dashboard-grid">
+
+
+                    <!-- =================================
+                         PRODUCTION CHART
+                    ================================== -->
+
+                    <article class="panel production-panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    24h Production Trend
+                                </h3>
+
+                                <span>
+                                    Barrels / day
+                                </span>
+
+                            </div>
+
+
+                            <select id="trendSelect">
+
+                                <option>
+                                    24h
+                                </option>
+
+                                <option>
+                                    7d
+                                </option>
+
+                                <option>
+                                    30d
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <canvas
+                            id="productionChart"
+                        ></canvas>
+
+
+                    </article>
+
+
+
+                    <!-- =================================
+                         SYSTEM OVERVIEW
+                    ================================== -->
+
+                    <article class="panel overview-panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    System Overview
+                                </h3>
+
+                                <span>
+                                    Live field indicators
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="indicator">
+
+
+                            <div class="indicator-ring blue">
+                                <span>84%</span>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Steam Injection
+                                </strong>
+
+                                <small>
+                                    1.18K bpd • High
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="indicator">
+
+
+                            <div class="indicator-ring green">
+                                <span>72%</span>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Reservoir Pressure
+                                </strong>
+
+                                <small>
+                                    210 psi • Optimal
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="indicator">
+
+
+                            <div class="indicator-ring orange">
+                                <span>91°F</span>
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    Temperature
+                                </strong>
+
+                                <small>
+                                    Reservoir • Stable
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+
+                    <!-- =================================
+                         TEMPERATURE & VISCOSITY
+                    ================================== -->
+
+                    <article class="panel thermal-panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    Reservoir Temperature & Viscosity
+                                </h3>
+
+                                <span>
+                                    Digital-twin prediction
+                                </span>
+
+                            </div>
+
+
+                            <span class="live-model">
+                                ● LIVE MODEL
+                            </span>
+
+                        </div>
+
+
+                        <canvas
+                            id="thermalChart"
+                        ></canvas>
+
+
+                    </article>
+
+
+
+                    <!-- =================================
+                         ALERTS
+                    ================================== -->
+
+                    <article class="panel alerts-panel">
+
+
+                        <div class="panel-header">
+
+                            <div>
+
+                                <h3>
+                                    Alerts Feed
+                                </h3>
+
+                                <span>
+                                    Priority events
+                                </span>
+
+                            </div>
+
+
+                            <button
+                                class="view-button"
+                                id="viewAlerts"
+                            >
+                                View all
+                            </button>
+
+                        </div>
+
+
+
+                        <div
+                            class="alert-list"
+                            id="alertList"
+                        >
+
+
+                            <div class="alert-item red-alert">
+
+                                <strong>
+                                    High rod-float risk — BW-0005
+                                </strong>
+
+                                <small>
+                                    Pump load and
+                                    rod behaviour
+                                    deviation detected.
+                                </small>
+
+                            </div>
+
+
+
+                            <div class="alert-item orange-alert">
+
+                                <strong>
+                                    Injection instability — BW-0009
+                                </strong>
+
+                                <small>
+                                    Steam injection
+                                    rate variation detected.
+                                </small>
+
+                            </div>
+
+
+
+                            <div class="alert-item yellow-alert">
+
+                                <strong>
+                                    Temperature drift — BW-0011
+                                </strong>
+
+                                <small>
+                                    Reservoir temperature
+                                    requires observation.
+                                </small>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </article>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =====================================
+                 LIVE WELLS PAGE
+            ====================================== -->
+
+            <section
+                class="page"
+                id="wells"
+            >
+
+                <div class="page-card">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span>
+                                FIELD MONITORING
+                            </span>
+
+                            <h2>
+                                Live Wells
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="wells-grid"
+                        id="wellsGrid"
+                    ></div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 DIGITAL TWIN PAGE
+            ====================================== -->
+
+            <section
+                class="page"
+                id="digital-twin"
+            >
+
+                <div class="page-card">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span>
+                                DIGITAL SIMULATION
+                            </span>
+
+                            <h2>
+                                Digital Twin
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="twin-controls">
+
+                        <label>
+                            Simulation Day
+                        </label>
+
+                        <input
+                            type="range"
+                            id="daySlider"
+                            min="1"
+                            max="100"
+                            value="50"
+                        >
+
+                        <strong>
+                            Day
+                            <span id="simulationDay">
+                                50
+                            </span>
+                        </strong>
+
+                    </div>
+
+
+                    <div class="twin-grid">
+
+
+                        <div class="twin-card">
+
+                            <span>
+                                RESERVOIR TEMPERATURE
+                            </span>
+
+                            <strong id="twinTemperature">
+                                89°F
+                            </strong>
+
+                        </div>
+
+
+                        <div class="twin-card">
+
+                            <span>
+                                OIL VISCOSITY
+                            </span>
+
+                            <strong id="twinViscosity">
+                                1,200 cP
+                            </strong>
+
+                        </div>
+
+
+                        <div class="twin-card">
+
+                            <span>
+                                THERMAL SWEEP
+                            </span>
+
+                            <strong id="twinSweep">
+                                80%
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="recommendation">
+
+                        <span>
+                            AI RECOMMENDATION
+                        </span>
+
+                        <h3 id="recommendationTitle">
+                            Maintain balanced operation.
+                        </h3>
+
+                        <p id="recommendationText">
+                            The thermal front is expanding
+                            with improving oil mobility.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 OPTIMIZATION PAGE
+            ====================================== -->
+
+            <section
+                class="page"
+                id="optimization"
+            >
+
+                <div class="page-card">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span>
+                                AI-ASSISTED PRODUCTION
+                            </span>
+
+                            <h2>
+                                Optimization
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="runOptimization"
+                        >
+                            Run Optimization
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="optimization-grid"
+                        id="optimizationGrid"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 ALERTS PAGE
+            ====================================== -->
+
+            <section
+                class="page"
+                id="alerts"
+            >
+
+                <div class="page-card">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span>
+                                SYSTEM EVENTS
+                            </span>
+
+                            <h2>
+                                Alerts
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="acknowledgeAll"
+                        >
+                            Acknowledge All
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="full-alert-list"
+                        id="fullAlertList"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 REPORTS PAGE
+            ====================================== -->
+
+            <section
+                class="page"
+                id="reports"
+            >
+
+                <div class="page-card">
+
+                    <div class="section-heading">
+
+                        <div>
+
+                            <span>
+                                FIELD ANALYTICS
+                            </span>
+
+                            <h2>
+                                Reports
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="reports-grid">
+
+
+                        <button
+                            class="report-card"
+                            data-report="production"
+                        >
+
+                            <span>
+                                📊
+                            </span>
+
+                            <strong>
+                                Production Report
+                            </strong>
+
+                            <small>
+                                Export well production data
+                            </small>
+
+                        </button>
+
+
+
+                        <button
+                            class="report-card"
+                            data-report="risk"
+                        >
+
+                            <span>
+                                ⚠
+                            </span>
+
+                            <strong>
+                                Risk Report
+                            </strong>
+
+                            <small>
+                                Export rod-float risk data
+                            </small>
+
+                        </button>
+
+
+
+                        <button
+                            class="report-card"
+                            data-report="twin"
+                        >
+
+                            <span>
+                                ◌
+                            </span>
+
+                            <strong>
+                                Digital Twin Report
+                            </strong>
+
+                            <small>
+                                Export simulation results
+                            </small>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         PETRO-AI BUTTON
+    ========================================== -->
+
+    <button
+        class="floating-ai"
+        id="floatingAI"
+        title="Ask PETRO-AI"
+    >
+        ✦
+    </button>
+
+
+
+    <!-- =========================================
+         PETRO-AI MODAL
+    ========================================== -->
+
+    <div
+        class="chat-modal"
+        id="chatModal"
+    >
+
+
+        <div class="chat-box">
+
+
+            <div class="chat-header">
+
+                <div>
+
+                    <strong>
+                        PETRO-AI
+                    </strong>
+
+                    <small>
+                        Digital-Well Intelligence
+                    </small>
+
+                </div>
+
+
+                <button
+                    id="closeChat"
+                    class="close-chat"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+
+            <div
+                class="chat-messages"
+                id="chatMessages"
+            >
+
+                <div class="bot-message">
+
+                    Hello! I'm PETRO-AI.
+
+                    <br><br>
+
+                    Ask me about well health,
+                    production, SRP, SOR,
+                    temperature, viscosity
+                    or rod-float risk.
+
+                </div>
+
+            </div>
+
+
+
+            <form
+                class="chat-form"
+                id="chatForm"
+            >
+
+                <input
+                    type="text"
+                    id="chatInput"
+                    placeholder="Ask PETRO-AI..."
+                    autocomplete="off"
+                >
+
+                <button
+                    type="submit"
+                >
+                    ➤
+                </button>
+
+            </form>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script
+        src="script.js"
+    ></script>
+
+
+     <script 
+     src="chatbot.js"
+     ></script>
+
+      <script 
+      src="server.js"
+      ></script>
+
+
+
+</body>
+
+</html>
